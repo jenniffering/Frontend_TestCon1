@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:#fff">Navbar</a>
+  <form class="form-inline">
+    <input name="search" [(ngModel)]="search"  class="form-control mr-sm-2" type="search" placeholder="getVideo" aria-label="Search">
+    <button (click)="searchVideo()" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<br>
+<div class="row">
+<div class="card" style="width: 18rem;" *ngFor="let item of videos">
+  <iframe width="320" height="180" [src]="item.id.videoId | url:'https://www.youtube.com/embed/'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="card-body">
+    <h5 class="card-title">{{item.snippet.title}}</h5>
+    <p class="card-text">{{item.snippet.description}}.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
