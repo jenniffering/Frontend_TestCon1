@@ -15,16 +15,21 @@ export class VideoComponent implements OnInit {
   
   public search: String;
   public videos:any=[];
+ 
 
+ /**Inject the Youtube service */
   constructor(public _ys:YoutubeService) { }
 
   ngOnInit() {
+   
   }
   searchVideo(){
     this._ys.getVideo(this.search).subscribe(result =>{
       this.videos = result.items;
     }
     )};
+  
+    
   
 
 }
